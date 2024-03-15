@@ -2,6 +2,16 @@ import os
 import datetime
 
 
+menu ='''
+[d] Deposito
+[s] Saque
+[e] Extrato
+[q] Sair
+
+=>
+'''
+
+
 saldo = 500
 lista_extratos = []
 numero_de_saques = 0
@@ -87,14 +97,6 @@ def sacar():
   else:
     print('Saldo Insuficiente para completar a Operação.\n')
 
-menu ='''
-[d] Deposito
-[s] Saque
-[e] Extrato
-[q] Sair
-
-=>
-'''
 
 while True:
 
