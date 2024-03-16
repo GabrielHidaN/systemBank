@@ -18,3 +18,4 @@ Para verificar se Você tem o Python 3 instalado BASTA Aprimir seu Prompt Comand
 
 ## Conecte-se Comigo
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/gabriel-victor-a8b6a0206/) 	[![Instagram](https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/gvictorbf/)
+
