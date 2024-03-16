@@ -38,7 +38,7 @@ def depositar():
     print(f'EXTRATO BANCARIO: \n')
     dataAndHour = datetime.datetime.now()
 
-    extrato = f' Tipo de  Operação : Deposito | Valor Depositado : R$ {deposito:.2f} |  Horário da Operação:  {dataAndHour} |  Saldo atual : R$ {saldo:.2f}'
+    extrato = f' ========== Extrato ==========\n Tipo de  Operação : Saque \n Valor Sacado : R$  {deposito:.2f} \n Horário da Operação:  {dataAndHour} \n Saldo atual :  R$ {saldo:.2f} \n =============================\n'
 
     lista_extratos.append(extrato)
     print(lista_extratos[-1])
@@ -87,7 +87,7 @@ def sacar():
 
             print(f'EXTRATO BANCARIO: \n')
 
-            extrato = f' Tipo de  Operação : Saque | Valor Sacado : R$  {saque:.2f} | Horário da Operação:  {dataAndHour} |  Saldo atual :  R$ {saldo:.2f} '
+            extrato = f' ========== Extrato ==========\n Tipo de  Operação : Saque \n Valor Sacado : R$  {saque:.2f} \n Horário da Operação:  {dataAndHour} \n Saldo atual :  R$ {saldo:.2f} \n =============================\n'
 
 
 
@@ -122,8 +122,13 @@ while True:
   elif opcao == 'e':
     os.system('cls')
     if len(lista_extratos) == 0:
+      print('========== Extrato ==========\n')
+      print('Nenhuma Movimentação Feita Até o Momento.\n')
       print(f' Seu Saldo é : R$ {saldo} ')
+      print('=============================\n')
+
     else:
+      os.system('cls')
       i = 0
       tamanhoLista = len(lista_extratos)
       for extrato in range(tamanhoLista):
