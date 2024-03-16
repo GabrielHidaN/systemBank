@@ -1,3 +1,8 @@
+#dunder
+__version__ = "0.1.0"
+__author__ = "Gabriel Victor"
+__license__ = "Unlincese"
+
 import os
 import datetime
 
