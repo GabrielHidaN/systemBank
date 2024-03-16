@@ -2,7 +2,11 @@ import os
 import datetime
 
 
+#Menu do sistema
 menu ='''
+
+BANKING SYSTEM
+
 [d] Deposito
 [s] Saque
 [e] Extrato
@@ -11,25 +15,25 @@ menu ='''
 =>
 '''
 
-
-saldo = 500
-lista_extratos = []
+#declaração de variavéis
+saldo = 500 #O usuario irá iniciar com o valor de R$ 500,00
+lista_extratos = [] #lista que irá armazenar todos os extratos
 numero_de_saques = 0
 LIMITE_SAQUES = 3
 
-
+#função de deposito
 def depositar():
    global saldo
    global lista_extratos
 
    try:
     deposito = float(input('Digite o Valor que deseja depositar R$ : '))
-    print(f'Deposito de R$ {deposito} Realizado com SUCESSO!\n')
+    print(f'Deposito de R$ {deposito:.2f} Realizado com SUCESSO!\n')
     saldo = saldo + deposito
     print(f'EXTRATO BANCARIO: \n')
     dataAndHour = datetime.datetime.now()
 
-    extrato = f' Tipo de  Operação : Deposito | Valor Depositado : R$ {deposito} |    Horário da Operação:  {dataAndHour} |  Saldo atual : R$ {saldo}'
+    extrato = f' Tipo de  Operação : Deposito | Valor Depositado : R$ {deposito:.2f} |  Horário da Operação:  {dataAndHour} |  Saldo atual : R$ {saldo:.2f}'
 
     lista_extratos.append(extrato)
     print(lista_extratos[-1])
@@ -39,7 +43,7 @@ def depositar():
      depositar()
 
 
-
+#função de Saque
 def sacar():
   global saldo
   global lista_extratos
@@ -63,7 +67,7 @@ def sacar():
               Para Consultar seu Extrato Digite a Tecla [e]\n''')
             if verExtarto == 'e':
               if len(lista_extratos) == 0:
-                print(f' Seu Saldo é : R$ {saldo} ')
+                print(f' Seu Saldo é : R$ {saldo:.2f} ')
               else:
                 print(lista_extratos)
               break
@@ -71,14 +75,14 @@ def sacar():
           elif saque > 0 and saque <= limite:
             saldo = saldo - saque
 
-            print(f'R${saque} Sacado com SUCESSO!\n')
+            print(f'R${saque:.2f} Sacado com SUCESSO!\n')
             numero_de_saques = numero_de_saques + 1
 
             dataAndHour = datetime.datetime.now()
 
             print(f'EXTRATO BANCARIO: \n')
 
-            extrato = f' Tipo de  Operação : Saque | Valor Sacado : R$  {saque} |      Horário da Operação:  {dataAndHour} |  Saldo atual :  R$ {saldo} '
+            extrato = f' Tipo de  Operação : Saque | Valor Sacado : R$  {saque:.2f} | Horário da Operação:  {dataAndHour} |  Saldo atual :  R$ {saldo:.2f} '
 
 
 
