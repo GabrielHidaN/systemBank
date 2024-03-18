@@ -33,15 +33,18 @@ def depositar():
 
    try:
     deposito = float(input('Digite o Valor que deseja depositar R$ : '))
-    print(f'Deposito de R$ {deposito:.2f} Realizado com SUCESSO!\n')
-    saldo = saldo + deposito
-    print(f'EXTRATO BANCARIO: \n')
-    dataAndHour = datetime.datetime.now()
+    if deposito < 0 :
+      print('Só é possível depositar um Valor Positivo!')
+    else:
+      print(f'Deposito de R$ {deposito:.2f} Realizado com SUCESSO!\n')
+      saldo = saldo + deposito
+      print(f'EXTRATO BANCARIO: \n')
+      dataAndHour = datetime.datetime.now()
 
-    extrato = f' ========== Extrato ==========\n Tipo de  Operação : Saque \n Valor Sacado : R$  {deposito:.2f} \n Horário da Operação:  {dataAndHour} \n Saldo atual :  R$ {saldo:.2f} \n =============================\n'
+      extrato = f' ========== Extrato ==========\n Tipo de  Operação : Deposito   \n Valor Sacado : R$  {deposito:.2f} \n Horário da Operação:  {dataAndHour}   \n Saldo atual :  R$ {saldo:.2f} \n =============================\n'
 
-    lista_extratos.append(extrato)
-    print(lista_extratos[-1])
+      lista_extratos.append(extrato)
+      print(lista_extratos[-1])
 
    except:
      print('Você deve Digitar um Valor Monetário!')
